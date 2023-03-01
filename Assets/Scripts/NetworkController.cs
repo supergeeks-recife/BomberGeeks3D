@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
+using TMPro;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
-
+    public TMP_Text textoPing;
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
@@ -14,7 +16,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        
+        textoPing.text = "Servidor: " + PhotonNetwork.CloudRegion + " Ping: " + PhotonNetwork.GetPing();
+        textoPing.color = new Color(0,0,255, 1f);
     }
 
     public override void OnConnected()
@@ -24,7 +27,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("O Mestre est· na sala!");
+        Debug.Log("O Mestre est√° na sala!");
         Debug.Log("Servidor: " + PhotonNetwork.CloudRegion + " Ping: " + PhotonNetwork.GetPing());
     }
 }
