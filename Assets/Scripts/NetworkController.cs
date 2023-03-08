@@ -8,6 +8,7 @@ using TMPro;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
+    
     public TMP_Text textoPing;
     void Start()
     {
