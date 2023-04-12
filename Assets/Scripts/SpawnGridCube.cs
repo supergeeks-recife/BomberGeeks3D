@@ -15,6 +15,8 @@ public class SpawnGridCube : MonoBehaviour
 
     [Header("Environments")]
     [SerializeField] GameObject[] environmentsToPickFrom;
+    [Range(0,1)]
+    [SerializeField] float chanceToSpawnEnvironment;
 
     void Start()
     {
@@ -27,8 +29,11 @@ public class SpawnGridCube : MonoBehaviour
         {
             for (int z = 0; z < gridZ; z++)
             {
-                Vector3 spawnPositionFloor = new Vector3(x, 0, z) + gridOrigin;
+                Vector3 spawnPositionFloor = new Vector3(x * gridSpacingOffset, 0, z * gridSpacingOffset) + gridOrigin;
                 PickAndSpawnFloor(spawnPositionFloor, Quaternion.identity);
+
+                Vector3 spawnPositionEnvironment = new Vector3(x * gridSpacingOffset, 2, z * gridSpacingOffset) + gridOrigin;
+                PickAndSpawnFloor(spawnPositionEnvironment, Quaternion.identity);                
             }
         }
     }
@@ -37,5 +42,17 @@ public class SpawnGridCube : MonoBehaviour
     {
         int randomIndex = Random.Range(0, blockFloorToPickFrom.Length);
         GameObject clone = Instantiate(blockFloorToPickFrom[randomIndex], positionToSpawn, rotationToSpawn);
+    }
+
+    void PickAndSpawnEnvironment(Vector3 positionToSpawn, Quaternion rotationToSpawn)
+    {
+        float chanceToSpawn = Random.Range(0f, 1f);
+
+        if(chanceToSpawn <= chanceToSpawnEnvironment)
+        {
+            int randomIndex = Random.Range(0, environmentsToPickFrom.Length);
+            GameObject clone = Instantiate(environmentsToPickFrom[randomIndex], positionToSpawn, rotationToSpawn);
+        }
+
     }
 }
