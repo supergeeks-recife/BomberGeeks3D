@@ -33,7 +33,7 @@ public class SpawnGridCube : MonoBehaviour
                 PickAndSpawnFloor(spawnPositionFloor, Quaternion.identity);
 
                 Vector3 spawnPositionEnvironment = new Vector3(x * gridSpacingOffset, 2, z * gridSpacingOffset) + gridOrigin;
-                PickAndSpawnFloor(spawnPositionEnvironment, Quaternion.identity);                
+                PickAndSpawnEnvironment(spawnPositionEnvironment, Quaternion.identity);                
             }
         }
     }
