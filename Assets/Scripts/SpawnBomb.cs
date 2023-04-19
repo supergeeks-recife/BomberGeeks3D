@@ -16,7 +16,7 @@ public class SpawnBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, new Vector3(0, -1, 0), Color.red);
+        Debug.DrawRay(transform.position, new Vector3(0, -2, 0), Color.red);
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -26,7 +26,7 @@ public class SpawnBomb : MonoBehaviour
 
     public void InstantiateBomb()
     {
-        if (Physics.Raycast(transform.position, new Vector3(0, -1, 0), out RaycastHit hit, 0.2f))
+        if (Physics.Raycast(transform.position, new Vector3(0, -2, 0), out RaycastHit hit, 0.2f))
         {
             GameObject objBomb = Instantiate(
                 prefabBomb,
@@ -36,5 +36,11 @@ public class SpawnBomb : MonoBehaviour
                     hit.transform.position.z),
                 Quaternion.identity);
         }
+    }
+
+    public void JogaBomba()
+    {
+        Vector3 bombPosition = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 2);
+        Instantiate(prefabBomb, bombPosition, transform.rotation);
     }
 }
