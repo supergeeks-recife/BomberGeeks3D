@@ -16,7 +16,7 @@ public class LobbyManager : MonoBehaviour
     void Start()
     {
         lobbyStartTime.gameObject.SetActive(false); 
-        connectionStatusText.gameObject.SetActive(false);
+        connectionStatusText.gameObject.SetActive(true);
     }
 
     void Update()

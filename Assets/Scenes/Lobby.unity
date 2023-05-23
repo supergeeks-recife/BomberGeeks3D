@@ -237,6 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574754258}
+  - component: {fileID: 574754259}
   m_Layer: 0
   m_Name: Network Controller
   m_TagString: Untagged
@@ -259,6 +260,20 @@ Transform:
   m_Father: {fileID: 1254957463}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &574754259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574754257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b0947af51f764387eb5172a3842d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbySystem: {fileID: 1900019915}
+  playerRoomMax: 1
 --- !u!1 &584331729
 GameObject:
   m_ObjectHideFlags: 0
