@@ -27,7 +27,6 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public override void OnConnected()
     {
         Debug.Log("Conectado!");
-        
     }
 
     public override void OnConnectedToMaster()
@@ -44,27 +43,29 @@ public class NetworkController : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("Falhou ao entrar no lobby, vou tentar de novo");
         string roomName = "Room" + Random.Range(1000, 10000);
 
-           //Propriedades da sala
-           RoomOptions roomOptions = new RoomOptions()
-           {
-               IsOpen = true,
-               IsVisible = true,
-               MaxPlayers = playerRoomMax
-           };
+        //Propriedades da sala
+        RoomOptions roomOptions = new RoomOptions()
+        {
+            IsOpen = true,
+            IsVisible = true,
+            MaxPlayers = playerRoomMax
+        };
 
-           PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
-           Debug.Log(roomName);
+        PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
+        Debug.Log(roomName);
+
+        PhotonNetwork.JoinRoom(roomName);   
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("Entrou na sala");
+        StartGame();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -79,7 +80,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
                 //O Master Client será o responsável por carregar a cena de jogo
                 if (player.IsMasterClient)
                 {
-                    StartGame();// -> OLHA AQUI TIO!!!
+                    // -> OLHA AQUI TIO!!!
+                    Debug.Log("Countdown deve ta correndo");
                     //Chama o Countdown
                     Hashtable props = new Hashtable
                     {
