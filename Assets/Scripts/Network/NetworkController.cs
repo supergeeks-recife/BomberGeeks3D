@@ -40,7 +40,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Entrei no Lobby");
-        PhotonNetwork.JoinRandomRoom();
+        
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -80,8 +80,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
                 //O Master Client será o responsável por carregar a cena de jogo
                 if (player.IsMasterClient)
                 {
-                    // -> OLHA AQUI TIO!!!
-                    Debug.Log("Countdown deve ta correndo");
+                    StartGame();
                     //Chama o Countdown
                     Hashtable props = new Hashtable
                     {
@@ -129,5 +128,6 @@ public class NetworkController : MonoBehaviourPunCallbacks
         lobbySystem.connectionStatusText.gameObject.SetActive(true);
 
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.JoinRandomRoom();
     }
 }
