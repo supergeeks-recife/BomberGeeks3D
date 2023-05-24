@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,37 +228,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &574754257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &574754259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3577321697987560635, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+  m_PrefabInstance: {fileID: 3577321697413073256}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 574754258}
-  m_Layer: 0
-  m_Name: Network Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &574754258
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574754257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1254957463}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b0947af51f764387eb5172a3842d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &584331729
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,89 +413,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1254957462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254957463}
-  m_Layer: 0
-  m_Name: '### Network Manager ###'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1254957463
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254957462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 972.0638, y: 553.87994, z: 220.68396}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1900019914}
-  - {fileID: 574754258}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1900019913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1900019914}
-  - component: {fileID: 1900019915}
-  m_Layer: 0
-  m_Name: Lobby Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1900019914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900019913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1254957463}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1900019915
+--- !u!114 &1900019915 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+  m_PrefabInstance: {fileID: 3577321697413073256}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900019913}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd9bcdd67d6734544b86ef93c8380cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelLogin: {fileID: 6045281969211672319}
-  panelLobby: {fileID: 6045281968688766383}
-  lobbyStartTime: {fileID: 1110548281}
-  playerNameInputField: {fileID: 810722310}
-  playerName: 
-  connectionStatusText: {fileID: 195783382}
+--- !u!1001 &3577321697413073256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3577321696234285310, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_Name
+      value: '### Network Manager ###'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 972.0638
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 553.87994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 220.68396
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696234285311, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: panelLobby
+      value: 
+      objectReference: {fileID: 6045281968688766383}
+    - target: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: panelLogin
+      value: 
+      objectReference: {fileID: 6045281969211672319}
+    - target: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: lobbyStartTime
+      value: 
+      objectReference: {fileID: 1110548281}
+    - target: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: connectionStatusText
+      value: 
+      objectReference: {fileID: 195783382}
+    - target: {fileID: 3577321696595184035, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
+      propertyPath: playerNameInputField
+      value: 
+      objectReference: {fileID: 810722310}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc2c81e6d2c4faa40912f53a16b932f4, type: 3}
 --- !u!1 &6045281968688766383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3480875180099650024, guid: c015fa08feca1cc48976c856475f423d, type: 3}
@@ -658,12 +643,76 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1900019915}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 574754259}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PanelLobbyActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SearchMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: NetworkController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374831494258, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1900019915}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 574754259}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CancelMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: NetworkController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182021374862159014, guid: c015fa08feca1cc48976c856475f423d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c015fa08feca1cc48976c856475f423d, type: 3}
