@@ -17,6 +17,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        lobbySystem.connectionStatusText.text = "Conectando o servidor...";
     }
 
     void Update()
@@ -26,14 +27,14 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public override void OnConnected()
     {
+        lobbySystem.connectionStatusText.text = "Conectado";
         Debug.Log("Conectado!");
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("O Mestre está na sala!");
-        lobbySystem.PanelLobbyActive();
-
+        
         PhotonNetwork.JoinLobby();
     }
 
@@ -80,7 +81,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
                 //O Master Client será o responsável por carregar a cena de jogo
                 if (player.IsMasterClient)
                 {
-                    StartGame();
+                    
                     //Chama o Countdown
                     Hashtable props = new Hashtable
                     {
@@ -126,6 +127,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = lobbySystem.playerNameInputField.text;
 
         lobbySystem.connectionStatusText.gameObject.SetActive(true);
+        lobbySystem.PanelLobbyActive();
 
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.JoinRandomRoom();
