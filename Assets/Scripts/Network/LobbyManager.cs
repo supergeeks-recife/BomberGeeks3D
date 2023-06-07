@@ -6,16 +6,22 @@ using TMPro;
 
 public class LobbyManager : MonoBehaviour
 {
+    [Header("--- Panels ---")]
     [SerializeField] GameObject panelLogin;
     [SerializeField] GameObject panelLobby;
 
-    public TMP_Text lobbyStartTime;
+    [Header("--- Login ---")]
     public TMP_InputField playerNameInputField;
-    public string playerName;
     public TMP_Text connectionStatusText;
+
+    [Header("--- Lobby ---")]
+    public TMP_InputField createRoomName;
+    public TMP_InputField enterRoomName;
+
     void Start()
     {
-        lobbyStartTime.gameObject.SetActive(false); 
+        panelLogin.SetActive(false);
+        panelLobby.SetActive(false);
         connectionStatusText.gameObject.SetActive(true);
     }
 

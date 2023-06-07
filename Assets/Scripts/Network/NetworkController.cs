@@ -99,7 +99,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
         if (propertiesThatChanged.ContainsKey(CountdownTimer.CountdownStartTime))
         {
             //Aparecer contador para todos os players quandos as propriedades da sala forem atualizadas
-            lobbySystem.lobbyStartTime.gameObject.SetActive(true);
+            //lobbySystem.lobbyStartTime.gameObject.SetActive(true);
         }
     }
 
