@@ -20,6 +20,7 @@ public class ControladorDeRede : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
         lobbyManager.connectionStatusText.text = "Conectado";
+        lobbyManager.PanelLoginActive();
     }
 
     public override void OnDisconnected(DisconnectCause cause)
