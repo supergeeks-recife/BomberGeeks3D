@@ -10,6 +10,11 @@ public class ControladorDeRede : MonoBehaviourPunCallbacks
 {
     public LobbyManager lobbyManager;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);    
+    }
+
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
@@ -32,4 +37,5 @@ public class ControladorDeRede : MonoBehaviourPunCallbacks
     {
         Debug.Log(PhotonNetwork.NickName + "Entrou no lobby");
     }
+
 }

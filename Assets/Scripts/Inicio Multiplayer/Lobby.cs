@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ using UnityEngine.SceneManagement;
 public class Lobby : MonoBehaviourPunCallbacks
 {
     public LobbyManager lobbyManager;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);    
+    }
 
     public void ButtonCreateRoom()
     {
@@ -29,4 +35,10 @@ public class Lobby : MonoBehaviourPunCallbacks
     {
         Debug.Log("Room failed " + returnCode + " Message: " + message);
     }
+
+    public string GetNickName()
+    {
+        return lobbyManager.playerNameInputField.text;
+    }
+
 }
