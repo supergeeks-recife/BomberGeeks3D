@@ -1605,7 +1605,7 @@ MonoBehaviour:
   controller: {fileID: 4655361785363762632}
   speedMovement: 7
   turnSmoothTime: 0.1
-  joystick: {fileID: 0}
+  joystick: {fileID: 8135886326569738823, guid: 56fae09712773584fb63896d473a98ee, type: 3}
   animator: {fileID: 4655361785363762634}
   isMoving: 0
   inputType: 0
