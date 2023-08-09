@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     //Referência para o controlador de movimentação
     public CharacterController controller;
@@ -35,48 +37,58 @@ public class PlayerMovement : MonoBehaviour
     //Tipo de controle que vai usar
     [SerializeField] InputType inputType;
 
+    public PhotonView photonView;
+    void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //Botões
-        //Escolhendo o 
-        switch(inputType)
+        if(photonView.IsMine)
         {
-            //Se o tipo de Input for PC
-            case InputType.PC:
-                //Pegue as teclas que representam o input Horizontal e Vertical
-                horizontal = Input.GetAxisRaw("Horizontal");
-                vertical = Input.GetAxisRaw("Vertical");
-                break;
-            //Se o tipo de Input for Mobile
-            case InputType.MOBILE:
-                //Pegue a direção na horizontal e vertical do joystick
-                horizontal = joystick.Horizontal;
-                vertical = joystick.Vertical;
-                break;
+            //Botões
+            //Escolhendo o 
+            switch(inputType)
+            {
+                //Se o tipo de Input for PC
+                case InputType.PC:
+                    //Pegue as teclas que representam o input Horizontal e Vertical
+                    horizontal = Input.GetAxisRaw("Horizontal");
+                    vertical = Input.GetAxisRaw("Vertical");
+                    break;
+                //Se o tipo de Input for Mobile
+                case InputType.MOBILE:
+                    //Pegue a direção na horizontal e vertical do joystick
+                    horizontal = joystick.Horizontal;
+                    vertical = joystick.Vertical;
+                    break;
+            }
+
+            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+            //Se o botão estiver pressionado
+            if(direction.magnitude > 0.1f)
+            {
+                //Ângulo em radianos dos eixos x e z e transformado em graus
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                //Suavizar a angulação
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                //Aplicar a direção e velocidade no Character Controller
+                controller.Move(direction * speedMovement * Time.deltaTime);
+            }
+            
+            //Aplicar a direção no verificar de movimentação
+            isMoving = direction.magnitude;
+
+            //Caso exista um controlador de animação
+            if(animator != null)
+                //Animations
+                animator.SetFloat("isMoving", isMoving);
         }
 
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-        //Se o botão estiver pressionado
-        if(direction.magnitude > 0.1f)
-        {
-            //Ângulo em radianos dos eixos x e z e transformado em graus
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            //Suavizar a angulação
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            //Aplicar a direção e velocidade no Character Controller
-            controller.Move(direction * speedMovement * Time.deltaTime);
-        }
-        
-        //Aplicar a direção no verificar de movimentação
-        isMoving = direction.magnitude;
-
-        //Caso exista um controlador de animação
-        if(animator != null)
-            //Animations
-            animator.SetFloat("isMoving", isMoving);
     }
 }
 

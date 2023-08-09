@@ -2364,6 +2364,7 @@ MonoBehaviour:
   animator: {fileID: 4655361785363762634}
   isMoving: 0
   inputType: 1
+  photonView: {fileID: 0}
 --- !u!114 &3424886758525269113
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -669,19 +669,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 42525050, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -4.1206306e-15
+      value: 0.000000039098598
       objectReference: {fileID: 0}
     - target: {fileID: 42525050, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.6745483e-16
+      value: -0.000000015737092
       objectReference: {fileID: 0}
     - target: {fileID: 994425657, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000022228646
+      value: 0.000000022228646
       objectReference: {fileID: 0}
     - target: {fileID: 994425657, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000009899802
+      value: -0.000000009899802
       objectReference: {fileID: 0}
     - target: {fileID: 2069601504, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: sceneViewId
@@ -741,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501783772678598806, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d9fe64848d75147b21f1ca2e5812da, type: 3}
